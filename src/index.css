@@ -1,0 +1,24 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@layer base {
+  .ProseMirror {
+    > * + * {
+      margin-top: 0.75em;
+    }
+  }
+
+  .ProseMirror p.is-editor-empty:first-child::before {
+    color: #adb5bd;
+    content: attr(data-placeholder);
+    float: left;
+    height: 0;
+    pointer-events: none;
+  }
+
+  .ProseMirror img {
+    @apply rounded-2xl shadow-lg dark:shadow-2xl dark:shadow-black/60 border border-zinc-200 dark:border-white/10 my-8 w-full object-cover bg-zinc-100 dark:bg-zinc-900/50 ring-1 ring-black/5 dark:ring-white/5 transition-all duration-300;
+  }
+}
+
+
